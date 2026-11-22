@@ -1,24 +1,88 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
-    { "source": "/login", "destination": "https://split360app.indiesoft.in/login", "permanent": true },
-    { "source": "/join/:token", "destination": "https://split360app.indiesoft.in/join/:token", "permanent": true },
-    { "source": "/groups/:path*", "destination": "https://split360app.indiesoft.in/groups/:path*", "permanent": true },
-    { "source": "/settle", "destination": "https://split360app.indiesoft.in/settle", "permanent": true },
-    { "source": "/privacy", "destination": "https://split360app.indiesoft.in/privacy", "permanent": true },
-    { "source": "/terms", "destination": "https://split360app.indiesoft.in/terms", "permanent": true }
+    {
+      "source": "/login",
+      "destination": "https://split360app.indiesoft.in/login",
+      "permanent": true
+    },
+    {
+      "source": "/join/:token",
+      "destination": "https://split360app.indiesoft.in/join/:token",
+      "permanent": true
+    },
+    {
+      "source": "/groups/:path*",
+      "destination": "https://split360app.indiesoft.in/groups/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/settle",
+      "destination": "https://split360app.indiesoft.in/settle",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "https://split360app.indiesoft.in/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/terms",
+      "destination": "https://split360app.indiesoft.in/terms",
+      "permanent": true
+    }
   ],
   "headers": [
-    { "source": "/_next/static/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
-    { "source": "/screens/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000" }] },
+    {
+      "source": "/sw.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/_next/static/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/screens/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000"
+        }
+      ]
+    },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests" }
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+        }
       ]
     }
   ]
