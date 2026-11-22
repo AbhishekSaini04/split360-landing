@@ -25,8 +25,7 @@ export default function Home() {
         {/* Hero */}
         <section className="paper overflow-hidden border-b-[1.5px] border-ink">
           <div className="mx-auto max-w-6xl px-5 pb-16 pt-14 text-center md:pt-20">
-            <Pill tone="mint">Free · No ads · Made in India</Pill>
-            <h1 className="mx-auto mt-6 max-w-4xl text-[44px] font-bold leading-[1.02] tracking-[-0.035em] md:text-[76px]">
+            <h1 className="mx-auto max-w-4xl text-[44px] font-bold leading-[1.02] tracking-[-0.035em] md:text-[76px]">
               Split bills with friends.
               <span className="mt-3 block">
                 <span className="pill inline-block rounded-2xl bg-lime px-4 pb-1 md:px-6">Settle up over UPI.</span>
