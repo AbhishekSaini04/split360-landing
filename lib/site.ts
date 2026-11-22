@@ -2,7 +2,7 @@
 const clean = (u: string) => u.replace(/\/+$/, '');
 
 export const SITE_URL = clean(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://split360.indiesoft.in');
-export const APP_URL = clean(process.env.NEXT_PUBLIC_APP_URL ?? 'https://split360.indiesoft.in');
+export const APP_URL = clean(process.env.NEXT_PUBLIC_APP_URL ?? 'https://split360app.indiesoft.in');
 
 export const site = {
   name: 'Split360',

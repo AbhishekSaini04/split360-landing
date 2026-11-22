@@ -8,7 +8,7 @@
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
   # Defaults; override per site in Netlify → Site settings → Environment variables.
   NEXT_PUBLIC_SITE_URL = "https://split360.indiesoft.in"
-  NEXT_PUBLIC_APP_URL = "https://split360.indiesoft.in"
+  NEXT_PUBLIC_APP_URL = "https://split360app.indiesoft.in"
 
 # Long cache for hashed build files, fresh HTML every time.
 [[headers]]
@@ -31,3 +31,28 @@
     Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
     # Next.js static pages use small inline scripts, so script-src allows 'unsafe-inline'; no third-party scripts at all.
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+
+# The web app moved from this domain to split360app.indiesoft.in. Old invite/login links keep working.
+[[redirects]]
+  from = "/join/*"
+  to = "https://split360app.indiesoft.in/join/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/login"
+  to = "https://split360app.indiesoft.in/login"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/groups/*"
+  to = "https://split360app.indiesoft.in/groups/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/settle"
+  to = "https://split360app.indiesoft.in/settle"
+  status = 301
+  force = true
