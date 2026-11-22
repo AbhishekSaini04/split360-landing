@@ -1,0 +1,41 @@
+@import 'tailwindcss';
+
+/* Split360 colours — the same tokens as the app (split360-website/src/index.css). */
+@theme {
+  --color-bg: #f4f7f5;
+  --color-surface: #ffffff;
+  --color-sunken: #ecf1ee;
+  --color-ink: #17242d;
+  --color-muted: #66757c;
+  --color-line: rgb(23 36 45 / 0.1);
+  --color-accent: #177b5b;
+  --color-accent-soft: #e3f3ea;
+  --color-hero: #123942;
+  --color-hero-muted: #a9c9c0;
+  --color-lime: #b8f768;
+  --color-danger: #c8473f;
+  --font-sans: var(--font-dm), system-ui, sans-serif;
+  --radius-card: 14px;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--color-bg); color: var(--color-ink); -webkit-font-smoothing: antialiased; }
+
+/* Faint graph-paper background (sober, like a ledger). */
+.paper {
+  background-image:
+    linear-gradient(to right, rgb(23 36 45 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(23 36 45 / 0.045) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Outlined pill / button with a small solid offset shadow. */
+.pill { border: 1.5px solid var(--color-ink); box-shadow: 2px 2px 0 var(--color-ink); }
+.btn-shadow { border: 1.5px solid var(--color-ink); box-shadow: 3px 3px 0 var(--color-ink); transition: transform .15s, box-shadow .15s; }
+.btn-shadow:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--color-ink); }
+.btn-shadow:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--color-ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn-shadow, .btn-shadow:hover, .btn-shadow:active { transition: none; transform: none; }
+}
