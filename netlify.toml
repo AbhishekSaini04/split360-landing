@@ -4,12 +4,22 @@
 
 [build.environment]
   NODE_VERSION = "22"
+  # This is a plain static export (./out); don't let Netlify wrap it in its Next.js server runtime.
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+  # Defaults; override per site in Netlify → Site settings → Environment variables.
+  NEXT_PUBLIC_SITE_URL = "https://split360.indiesoft.in"
+  NEXT_PUBLIC_APP_URL = "https://split360.indiesoft.in"
 
 # Long cache for hashed build files, fresh HTML every time.
 [[headers]]
   for = "/_next/static/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/screens/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
 
 [[headers]]
   for = "/*"
