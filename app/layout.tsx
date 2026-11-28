@@ -16,8 +16,8 @@ export const metadata: Metadata = {
     'expense tracker', 'bill splitter', 'split bills with friends', 'Splitwise alternative', 'trip expense splitter',
     'flatmate expenses', 'UPI settle up', 'group expenses India', 'expense sharing app', 'trip kitty', 'Split360',
   ],
-  authors: [{ name: site.maker.name, url: site.maker.url }],
-  creator: site.maker.name,
+  authors: [{ name: site.company.name, url: site.company.url }],
+  creator: site.company.name,
   publisher: site.company.name,
   category: 'finance',
   alternates: { canonical: '/' },
@@ -55,7 +55,6 @@ const graph = {
       '@id': `${site.company.url}/#org`,
       name: site.company.name,
       url: site.company.url,
-      founder: { '@type': 'Person', name: site.maker.name, sameAs: [site.maker.url] },
     },
     {
       '@type': 'WebSite',

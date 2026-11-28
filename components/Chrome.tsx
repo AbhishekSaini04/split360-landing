@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Heart } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { site } from '@/lib/site';
 
 export function Logo({ className = '' }: { className?: string }) {
@@ -82,11 +82,11 @@ export function Footer() {
       </div>
       <div className="border-t border-line">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-5 py-5 text-sm text-muted sm:flex-row">
-          <p className="flex items-center gap-1.5">
-            Made with <Heart size={14} className="fill-danger text-danger" aria-label="love" /> by
-            <a href={site.maker.url} target="_blank" rel="noopener" className="font-semibold text-accent hover:underline">{site.maker.name}</a>
+          <p>© Split360</p>
+          <p className="text-center sm:text-right">
+            A product of <b className="font-semibold text-ink">IndieSoft</b>
+            <a href={site.company.url} target="_blank" rel="noopener" className="block font-semibold text-accent hover:underline">indiesoft.in</a>
           </p>
-          <p>A product of <a href={site.company.url} target="_blank" rel="noopener" className="font-semibold text-accent hover:underline">{site.company.name}</a></p>
         </div>
       </div>
     </footer>

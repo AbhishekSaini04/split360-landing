@@ -10,7 +10,6 @@ export const site = {
   description:
     'Free expense tracker and bill splitter for India. Log daily spending, split trip and flat bills with friends, pool money for trips and settle up over UPI. No ads.',
   company: { name: 'IndieSoft.in', url: 'https://indiesoft.in' },
-  maker: { name: 'Abhishek Saini', url: 'https://www.linkedin.com/in/abhisheksaini04' },
   links: {
     app: APP_URL,
     login: `${APP_URL}/login`,
