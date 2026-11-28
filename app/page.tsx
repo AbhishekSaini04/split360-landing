@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Check, Mic } from 'lucide-react';
+import { ArrowRight, Check, Mic } from 'lucide-react';
 import { ICONS } from '@/lib/icons';
 import { AppButton, Footer, Header, Phone, Pill } from '@/components/Chrome';
 import { JsonLd } from '@/components/JsonLd';
@@ -32,13 +32,13 @@ export default function Home() {
               </span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-muted md:text-xl">
-              Split360 is a free expense tracker and bill splitter. Log your daily spending, share trip and flat expenses,
-              pool money before a trip, and clear it all in the fewest payments.
+              Split360 is a free expense tracker and bill splitter. Log your spending by voice, share trip and flat expenses,
+              track udhaar, set reminders, and settle up over UPI or a QR in the fewest payments. In English or Hindi.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <AppButton>Start free with Google</AppButton>
-              <Link href="#how-it-works" className="pill inline-flex h-12 items-center rounded-full bg-surface px-6 text-[15px] font-semibold">
-                See how it works
+              <Link href="/guide" className="pill inline-flex h-12 items-center rounded-full bg-surface px-6 text-[15px] font-semibold">
+                How to use it
               </Link>
             </div>
 
@@ -89,7 +89,7 @@ export default function Home() {
         <section className="border-y-[1.5px] border-ink bg-hero text-white">
           <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:py-24">
             <div>
-              <span className="pill inline-flex rounded-full bg-lime px-3 py-1 text-xs font-semibold uppercase tracking-wide text-ink">New · Trip pool</span>
+              <span className="pill inline-flex rounded-full bg-lime px-3 py-1 text-xs font-semibold uppercase tracking-wide text-ink">Trip pool</span>
               <h2 className="mt-5 text-4xl font-bold tracking-[-0.03em] md:text-5xl">Collect trip money up front. Settle only the difference.</h2>
               <p className="mt-5 text-lg text-hero-muted">
                 Everyone gives ₹1,000 to one person before Goa, and anyone can top up on the way. Split360 tracks it all, so when the
@@ -102,6 +102,34 @@ export default function Home() {
               </ul>
             </div>
             <Phone src="/screens/pool.webp" alt="Pool card: collected ₹11,500, spent ₹13,800, and what each friend put in" className="mx-auto w-[70%] max-w-[300px] border-ink" />
+          </div>
+        </section>
+
+        {/* What's new */}
+        <section id="new" className="mx-auto max-w-6xl px-5 py-20 md:py-28">
+          <div className="text-center">
+            <Pill tone="lime">New in Split360</Pill>
+            <h2 className="mx-auto mt-5 max-w-3xl text-4xl font-bold tracking-[-0.03em] md:text-5xl">Less typing, faster paying.</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">Each one takes a few seconds. The guide shows exactly how.</p>
+          </div>
+          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { screen: '/screens/qr.webp', title: 'Get paid by QR', body: 'Type the amount, show the QR or send it on WhatsApp. Money goes straight to your UPI ID.', how: 'settle-up' },
+              { screen: '/screens/voice.webp', title: 'Ask the mic', body: '"Is mahine chai pe kitna gaya?" The answer comes right away.', how: 'voice' },
+              { screen: '/screens/udhaar.webp', title: 'Udhaar', body: '"Rahul ko 500 udhaar diye." Tracked with your friend, not counted as spending.', how: 'udhaar' },
+              { screen: '/screens/hindi.webp', title: 'हिंदी में भी', body: 'Switch the whole app to Hindi from Settings, and back any time.', how: 'settings' },
+              { screen: '/screens/items.webp', title: 'Split item by item', body: 'Pizza for three, drinks for two. Tax and tip shared fairly.', how: 'splitting' },
+              { screen: '/screens/summary.webp', title: 'Trip summary', body: 'Total, who paid what, top categories. Share it in the group as an image.', how: 'trips' },
+              { screen: '/screens/reminders.webp', title: 'Reminders that ring', body: '"Remind me rent 10 December 9 am." Work done or 10 min later, right on the notification.', how: 'reminders' },
+              { screen: '/screens/chart.webp', title: 'See the trend', body: 'Week by week, month by month, and each category against last month.', how: 'adding-expenses' },
+            ].map((n) => (
+              <Link key={n.title} href={`/guide#${n.how}`} className="group block">
+                <Phone src={n.screen} alt={n.title} className="mx-auto w-[70%] max-w-[220px] transition group-hover:-translate-y-1" />
+                <h3 className="mt-5 text-lg font-semibold">{n.title}</h3>
+                <p className="mt-1 text-[15px] text-muted">{n.body}</p>
+                <span className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-accent">How to use <ArrowRight size={14} aria-hidden /></span>
+              </Link>
+            ))}
           </div>
         </section>
 
@@ -127,8 +155,9 @@ export default function Home() {
                 <h3 className="text-3xl font-bold tracking-[-0.02em]">The fewest payments to clear a group</h3>
                 <p className="mt-4 text-lg text-muted">
                   Ten expenses between five friends do not need ten payments. Split360 simplifies the debts, so most groups settle in
-                  two or three UPI transfers. Tap the bell to remind a friend on WhatsApp.
+                  two or three UPI transfers. Tap the bell to remind a friend on WhatsApp, or show them a QR with the amount.
                 </p>
+                <Link href="/guide" className="mt-6 inline-flex items-center gap-1 font-semibold text-accent underline-offset-4 hover:underline">Full step-by-step guide <ArrowRight size={16} aria-hidden /></Link>
               </div>
             </div>
           </div>

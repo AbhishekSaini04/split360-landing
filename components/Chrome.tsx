@@ -40,7 +40,7 @@ export function Phone({ src, alt, className = '', priority = false }: { src: str
 
 const nav = [
   { href: '/features', label: 'Features' },
-  { href: '/#how-it-works', label: 'How it works' },
+  { href: '/guide', label: 'How to use' },
   { href: '/#faq', label: 'FAQ' },
 ];
 
@@ -71,6 +71,7 @@ export function Footer() {
         <nav aria-label="Product" className="space-y-2 text-sm">
           <p className="font-semibold">Product</p>
           <Link href="/features" className="block text-muted hover:text-ink">Features</Link>
+          <Link href="/guide" className="block text-muted hover:text-ink">How to use</Link>
           <Link href="/#faq" className="block text-muted hover:text-ink">FAQ</Link>
           <a href={site.links.login} className="block text-muted hover:text-ink">Open the app</a>
         </nav>
